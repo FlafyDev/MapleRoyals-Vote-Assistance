@@ -1,0 +1,31 @@
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.csprojAssemblyReference.cache
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals_Voter.mainWindow.resources
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals_Voter.Properties.Resources.resources
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.csproj.GenerateResource.cache
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.csproj.CoreCompileInputs.cache
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\MapleRoyals Voter.exe.config
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\MapleRoyals Voter.exe
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\MapleRoyals Voter.pdb
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.exe
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.pdb
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\HtmlAgilityPack.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\HtmlAgilityPack.pdb
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\HtmlAgilityPack.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\obj\Debug\MapleRoyals Voter.csproj.CopyComplete
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\WebDriver.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\WebDriver.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\AngleSharp.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\Microsoft.Win32.Registry.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Security.AccessControl.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Security.Principal.Windows.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\WebDriverManager.dll
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\AngleSharp.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\Microsoft.Win32.Registry.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Security.AccessControl.xml
+D:\VIsual Studio Repos\MapleRoyals Voter\MapleRoyals Voter\bin\Debug\System.Security.Principal.Windows.xml
