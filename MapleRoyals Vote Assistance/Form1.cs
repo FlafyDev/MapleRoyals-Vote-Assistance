@@ -10,7 +10,7 @@ namespace MapleRoyalsVoteAssistance
     public partial class mainWindow : Form
     {
         string AppName = "MapleRoyals Vote Assistance";
-        string GithubLink = "https://github.com/flafydev";
+        string GithubLink = "https://github.com/FlafyDev/MapleRoyals-Vote-Assistance";
         MRVoter Voter = new MRVoter();
         bool Closable = false;
 
@@ -31,8 +31,6 @@ namespace MapleRoyalsVoteAssistance
                 btnAddStartup.Visible = false;
             }
 
-            Console.WriteLine(Properties.Settings.Default.FirstLaunch);
-
             Voter.VotingThreadChangedEvent += VotingThreadChanged;
             Voter.VotingThreadTimeLeftEvent += VotingThreadTimeLeft;
 
@@ -43,9 +41,10 @@ namespace MapleRoyalsVoteAssistance
             menuItem.Text = "E&xit";
             menuItem.Click += new EventHandler(CloseHandler);
 
+            notifyIcon.ContextMenu = contextMenu;
+
             if (Properties.Settings.Default.FirstLaunch)
             {
-                notifyIcon.ContextMenu = contextMenu;
                 notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
                 notifyIcon.BalloonTipText = "Press here or the MapleRoyals tray icon to open the dashboard.";
                 notifyIcon.BalloonTipTitle = AppName;
@@ -94,7 +93,7 @@ namespace MapleRoyalsVoteAssistance
 
         private void ShowForm(object sender, EventArgs e)
         {
-            Show();
+            ShowMe();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -181,6 +180,30 @@ namespace MapleRoyalsVoteAssistance
         {
             AddApplicationToStartup();
             btnAddStartup.Visible = false;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWME)
+            {
+                ShowMe();
+            }
+            base.WndProc(ref m);
+        }
+
+        private void ShowMe()
+        {
+            Show();
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            // get our current "TopMost" value (ours will always be false though)
+            bool top = TopMost;
+            // make our form jump to the top of everything
+            TopMost = true;
+            // set it back to whatever it was
+            TopMost = top;
         }
     }
 }

@@ -131,7 +131,7 @@
             // btnAddStartup
             // 
             resources.ApplyResources(this.btnAddStartup, "btnAddStartup");
-            this.btnAddStartup.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddStartup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAddStartup.FlatAppearance.BorderSize = 0;
             this.btnAddStartup.Name = "btnAddStartup";
             this.btnAddStartup.UseVisualStyleBackColor = false;

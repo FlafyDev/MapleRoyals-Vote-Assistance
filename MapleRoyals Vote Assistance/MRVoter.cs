@@ -1,6 +1,4 @@
-﻿
-using HtmlAgilityPack;
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
@@ -14,7 +12,8 @@ using OpenQA.Selenium.Chrome;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using System.Drawing;
-using AngleSharp.Css;
+using System.Configuration;
+using System.IO;
 
 namespace MapleRoyalsVoteAssistance
 {
@@ -200,6 +199,7 @@ namespace MapleRoyalsVoteAssistance
                     }
 
                     GtopVoting = true;
+                    Console.WriteLine("Voting started");
                     try
                     {
                         OpenVotingWeb(voteInfo.Link);
@@ -207,6 +207,7 @@ namespace MapleRoyalsVoteAssistance
                     {
                         Console.WriteLine(e);
                     }
+                    Console.WriteLine("Voting ended");
                     GtopVoting = false;
 
                     try { Thread.Sleep(TimeSpan.FromMinutes(10)); }
@@ -226,13 +227,24 @@ namespace MapleRoyalsVoteAssistance
         private void OpenVotingWeb(string link)
         {
             // Create and configure the Web Driver.
+            var settingsDirectory = Path.GetDirectoryName(ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath);
+            var currentDirectory = Directory.GetCurrentDirectory();
+            Directory.SetCurrentDirectory(settingsDirectory);
             new DriverManager().SetUpDriver(new ChromeConfig());
+            Directory.SetCurrentDirectory(currentDirectory);
+            
             var driverOptions = new ChromeOptions();
             var driverService = ChromeDriverService.CreateDefaultService();
+
+            var chromeProfile = "MRVACProfile";
+            var chromeProfilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Google\\Chrome\\User Data", chromeProfile);
 
             driverOptions.AddArgument($"--window-size={_gtopVotingPageSize.Width},{_gtopVotingPageSize.Height}");
             driverOptions.AddArgument("--window-position=-200000,-200000");
             driverOptions.AddArgument($"--app={link}");
+            driverOptions.AddArgument($"--user-data-dir={ chromeProfilePath }");
+            driverOptions.AddArgument($"--profile-directory={ chromeProfile }");
+            driverOptions.AddArgument("--disable-extensions");
             driverService.HideCommandPromptWindow = true;
 
             IWebDriver webDriver = new ChromeDriver(driverService, driverOptions);
@@ -244,8 +256,10 @@ namespace MapleRoyalsVoteAssistance
             } catch (WebDriverException) { }
 
             // Make it look nice.
-            IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;
-            js.ExecuteScript($@"
+            try
+            {
+                IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;
+                js.ExecuteScript($@"
                 form = document.getElementById('Myform');
                 form.setAttribute('style', 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);');
                 document.body.appendChild(form);
@@ -253,7 +267,11 @@ namespace MapleRoyalsVoteAssistance
                 document.body.getElementsByTagName('aside')[0].remove();
                 document.body.getElementsByTagName('footer')[0].remove();
                 document.body.setAttribute('style', 'display: block; background-image: url(""{_gtopVotingPageBackground}"");');"
-            );
+                );
+            } catch
+            {
+                Console.WriteLine("Cannot make the page prettier");
+            }
             
             // Center the window on the primary screen.
             webDriver.Manage().Window.Position = (Point) (SizeDivision(Screen.PrimaryScreen.Bounds.Size - _gtopVotingPageSize, 2));
