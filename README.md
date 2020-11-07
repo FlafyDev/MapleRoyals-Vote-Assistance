@@ -1,4 +1,4 @@
-# MapleRoyals Vote Assistance
+# MapleRoyals Vote Assistance (Unofficial)
 This program automates the voting process for MapleRoyals as much as possible.  
 The goal is to remove the daily pressure of memorizing to vote for MapleRoyals.
 ## Installation and Requirements
